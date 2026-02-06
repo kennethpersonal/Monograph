@@ -93,7 +93,7 @@ C:\Users\kcasi\source\repos\BlazorMonograph\WEB\wwwroot\lib\bootstrap\dist\js\bo
 C:\Users\kcasi\source\repos\BlazorMonograph\WEB\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
 C:\Users\kcasi\source\repos\BlazorMonograph\WEB\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
 C:\Users\kcasi\source\repos\BlazorMonograph\WEB\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+C:\Users\kcasi\source\repos\BlazorMonograph\WEB\wwwroot\tailwind.css
 C:\Users\kcasi\source\repos\BlazorMonograph\WEB\Components\Layout\ReconnectModal.razor.js
 C:\Users\kcasi\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.2\_framework\blazor.web.js
 C:\Users\kcasi\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.2\_framework\blazor.server.js
-C:\Users\kcasi\source\repos\BlazorMonograph\WEB\wwwroot\tailwind.css
