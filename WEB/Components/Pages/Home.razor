@@ -1,13 +1,14 @@
 ﻿@page "/"
 
-<div class="border-5 flex-en">
-    <div class="border-1">1</div>
-    <div class="border-1">2</div>
-    <div class="border-1">3</div>
-    <div class="border-1">4</div>
+
+@inject IMonograph _monograph
+
+<div class="container-fluid p-0 text-center">
+    <img src="images/header.svg" class="img-fluid w-100" alt="biogesic" />
 </div>
 
-@code
-{
+<div class="flex justify-content-end p-5">
+    <input type="text" class="form-control" placeholder="Search..." @bind-value="_search" />
+    <i class="search-icon border-1 h-50">22</i>
+</div>
 
-}

@@ -1,10 +1,14 @@
 using WEB.Components;
+using WEB.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddScoped<IMonograph, MonographService>();
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7280/") });
 
 var app = builder.Build();
 

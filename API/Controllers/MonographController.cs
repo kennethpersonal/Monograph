@@ -1,5 +1,5 @@
-﻿using API.Model;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using SHARED.Models;
 
 namespace API.Controllers
 {
@@ -7,6 +7,7 @@ namespace API.Controllers
     [ApiController]
     public class MonographController : Controller
     {
+        [HttpGet]
         public async Task<IActionResult> List()
         {
             // 1. Create the parent instance
@@ -33,73 +34,73 @@ namespace API.Controllers
             return Ok(biogesicMonograph);
         }
 
-        // GET: MonographController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+        //// GET: MonographController/Details/5
+        //public ActionResult Details(int id)
+        //{
+        //    return View();
+        //}
 
-        // GET: MonographController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //// GET: MonographController/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
-        // POST: MonographController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //// POST: MonographController/Create
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create(IFormCollection collection)
+        //{
+        //    try
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
-        // GET: MonographController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+        //// GET: MonographController/Edit/5
+        //public ActionResult Edit(int id)
+        //{
+        //    return View();
+        //}
 
-        // POST: MonographController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //// POST: MonographController/Edit/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit(int id, IFormCollection collection)
+        //{
+        //    try
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
-        // GET: MonographController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //// GET: MonographController/Delete/5
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
 
-        // POST: MonographController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //// POST: MonographController/Delete/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Delete(int id, IFormCollection collection)
+        //{
+        //    try
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
     }
 }
