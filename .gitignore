@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/.vs/BlazorMonograph.slnx/v18/DocumentLayout.json
+/API/obj/Debug/net10.0/API.AssemblyInfo.cs
+/API/obj/Debug/net10.0/API.AssemblyInfoInputs.cache
+/API/obj/Debug/net10.0/rpswa.dswa.cache.json
+/WEB/obj/Debug/net10.0/rpswa.dswa.cache.json
+/WEB/obj/Debug/net10.0/WEB.AssemblyInfo.cs
+/WEB/obj/Debug/net10.0/WEB.AssemblyInfoInputs.cache
