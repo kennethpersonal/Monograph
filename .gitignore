@@ -368,3 +368,7 @@ FodyWeavers.xsd
 /WEB/obj/Debug/net10.0/rpswa.dswa.cache.json
 /WEB/obj/Debug/net10.0/WEB.AssemblyInfo.cs
 /WEB/obj/Debug/net10.0/WEB.AssemblyInfoInputs.cache
+/.vs/BlazorMonograph.slnx/v18/.suo
+/API/obj/API.csproj.nuget.dgspec.json
+/API/obj/project.assets.json
+/API/obj/project.nuget.cache
