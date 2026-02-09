@@ -10,6 +10,7 @@ namespace WEB.Components.Pages
 
 
         public List<MonographModel> _records = new();
+        public List<MonographModel> _MonographDropdown = new();
         public List<MonographModel> _filteredList = new();
         private List<MonographModel> _pagedMonographs = new();
 
@@ -20,7 +21,7 @@ namespace WEB.Components.Pages
 
         private bool _isOpenType = false;
 
-        public MonographModel? _selectedRecord;
+        public MonographModel? _selectedMonograph;
 
         public IEnumerable<string> _tabMenu = Array.Empty<string>();
 
@@ -28,9 +29,9 @@ namespace WEB.Components.Pages
 
         public List<MonographModel> PagedItems = new();
 
-        public int currentPage = 1;
-        public int pageSize = 10; // Default size
-        public int totalPages;
+        public int _currentPage = 1;
+        public int _pageSize = 10; // Default size
+        public int _totalPages;
 
 
     }

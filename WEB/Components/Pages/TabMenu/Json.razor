@@ -1,20 +1,24 @@
 ﻿<div class="tab-pane fade show active">
-    <div class="card w-50">
-        <img class="card-img-top" src="images/biogesic.svg">
-        <div class="card-body">
-            <h2 class="card-title"><strong>@Details?.MonographName</strong></h2>
-            <p>@Details?.MonographType</p>
+    <div class="monograph-card">
+        <header class="monograph-header">
+            <span class="monograph-type">@Details?.MonographType</span>
+            <h1 class="monograph-name">@Details?.MonographName</h1>
+            <div class="monograph-id">ID: @Details?.MonographId</div>
+        </header>
+
+        <main>
             @if (Details?.MonographContents != null)
             {
                 foreach (var item in Details.MonographContents)
                 {
-                    <p><b>@item.Header:</b> @item.Text</p>
+                    <div class="content-section">
+                        <div class="section-label">@item.Header</div>
+                        <div class="section-text">@item.Text</div>
+                    </div>
                 }
             }
-        </div>
+        </main>
     </div>
-
-
 </div>
 
 

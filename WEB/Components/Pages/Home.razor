@@ -17,73 +17,91 @@
                     @_SelectedType
                 </button>
                 <ul class="dropdown-menu @(_isOpenType ? "show" : "")">
-                    @foreach (var item in _records)
+                    @if (_MonographDropdown != null)
                     {
-                        <li>
-                            <button class="dropdown-item" @onclick='() => SelectTyeOption(item.MonographType)'>@item.MonographType</button>
-                        </li>
+                        @foreach (var item in _MonographDropdown)
+                        {
+                            <li>
+                                <button class="dropdown-item" @onclick='() => SelectTyeOption(item.MonographType)'>@item.MonographType</button>
+                            </li>
+                        }
                     }
                 </ul>
             </div>
             <div class="form-check form-switch m-2">
-                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckChecked" @bind="_isAscending">
-                <label class="form-check-label text-light" for="switchCheckChecked">@(_isAscending ? "Ascending" : "Descending")</label>
+                <input class="form-check-input hover-pointer" type="checkbox" role="switch" id="switchCheckChecked" checked="@_isAscending" @onchange="OnToggleSortBy">
+                <label class="form-check-label text-light hover-pointer" for="switchCheckChecked">Sorted by @(_isAscending ? "Ascending" : "Descending")</label>
             </div>
         </div>
     </div>
 </div>
 
+@if (_pagedMonographs.Count == 0)
+{
+    <WEB.Components.Shared.NoRecordFound />
+}
+else
+{
 
-<div class="d-flex flex-row justify-content-start">
-    <div class="w-50 p-4">
-        <div class="list-group shadow-lg bg-whiteshadow-lg bg-white">
-            @foreach (var item in _pagedMonographs)
-            {
-                <a class="list-group-item hover-pointer" @onclick="(() => OnClickMonographs(item))">
-                    <div class="pt-2"><strong>@item.MonographName</strong></div>
-                    <div class="small pb-2">@item.MonographType</div>
-                </a>
-            }
+    <div class="d-flex flex-row justify-content-start">
+        <div class="w-50 p-4">
+            <div class="list-group shadow-lg bg-whiteshadow-lg bg-white">
+                @foreach (var item in _pagedMonographs)
+                {
+                    <a class="list-group-item hover-pointer @(_selectedMonograph == item ? "active" : "")" @onclick="(() => OnClickMonographs(item))">
+                        <div class="pt-2"><strong>@item.MonographName</strong></div>
+                        <div class="small pb-2">@item.MonographType</div>
+                    </a>
+                }
+            </div>
+
+            <WEB.Components.Shared.Pagination CurrentPage="_currentPage"
+                                              TotalPages="_totalPages"
+                                              OnPageChanged="HandlePageChange"
+                                              OnPageSizeChanged="HandlePageSizeChange"
+                                              RecordCount="@_filteredList.Count"
+                                              VisibleThreshold="4"
+                                              DefaultPageSize="_pageSize" />
         </div>
+        <div class="px-5 w-100">
+            <div class="sticky w-100 pt-4">
+                @if (_selectedMonograph != null)
+                {
+                    <div class="justify-content-center w-100">
+                        <ul class="nav nav-pills py-5">
+                            <li class="nav-item">
+                                <a class="nav-link @GetActiveClass("JSON")" @onclick='() => SetActiveTab("JSON")' href="#">JSON</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @GetActiveClass("Raw JSON")" @onclick='() => SetActiveTab("Raw JSON")' href="#">Raw JSON</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @GetActiveClass("DetailHtmlData")" @onclick='() => SetActiveTab("DetailHtmlData")' href="#">DetailHtmlData</a>
+                            </li>
+                        </ul>
+                    </div>
 
-        <WEB.Components.Shared.Pagination CurrentPage="currentPage"
-                                          TotalPages="totalPages"
-                                          OnPageChanged="HandlePageChange"
-                                          OnPageSizeChanged="HandlePageSizeChange"
-                                          RecordCount="@_filteredList.Count"
-                                          VisibleThreshold="4"
-                                          DefaultPageSize="pageSize" />
 
+                    <div class="tab-content" id="nav-tabContent">
+                        @if (_activeTab == "JSON")
+                        {
+                            <WEB.Components.Pages.TabMenu.Json Details="_selectedMonograph" />
+                        }
+                        else if (_activeTab == "Raw JSON")
+                        {
+                            <WEB.Components.Pages.TabMenu.RawJson Details="_selectedMonograph" />
+                        }
+                        else if (_activeTab == "DetailHtmlData")
+                        {
+                            <WEB.Components.Pages.TabMenu.DetailHtmlData Details="_selectedMonograph" />
+                        }
+                    </div>
+                }
+                else
+                {
+                    <WEB.Components.Shared.SelectMonographDisplay />
+                }
+            </div>
+        </div>
     </div>
-    <div class="px-5 w-100 sticky">
-        <div class="justify-content-center w-100">
-            <ul class="nav nav-pills py-5">
-                <li class="nav-item">
-                    <a class="nav-link @GetActiveClass("JSON")" @onclick='() => SetActiveTab("JSON")' href="#">JSON</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link @GetActiveClass("Raw JSON")" @onclick='() => SetActiveTab("Raw JSON")' href="#">Raw JSON</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link @GetActiveClass("DetailHtmlData")" @onclick='() => SetActiveTab("DetailHtmlData")' href="#">DetailHtmlData</a>
-                </li>
-            </ul>
-        </div>
-
-
-        <div class="tab-content" id="nav-tabContent">
-            @if (_activeTab == "JSON")
-            {
-                <WEB.Components.Pages.TabMenu.Json Details="_selectedRecord" />
-            }
-            else if (_activeTab == "Raw JSON")
-            {
-                <WEB.Components.Pages.TabMenu.RawJson Details="_selectedRecord" />
-            }
-            else if (_activeTab == "DetailHtmlData")
-            {
-                <WEB.Components.Pages.TabMenu.DetailHtmlData Details="_selectedRecord" />
-            }
-        </div>
-    </div>
-</div>
+}

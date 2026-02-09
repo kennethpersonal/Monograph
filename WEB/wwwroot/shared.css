@@ -20,11 +20,157 @@
     margin-left: 5em !important;
 }
 
-
 .sticky {
-    position: -webkit-sticky; /* Safari support */
+    display: inline-block;
     position: sticky;
-    top: 0; /* Stick to the very top */
-    z-index: 1020; /* Ensure it stays above other content */
-    background-color: white; /* Prevents content behind it from showing through */
+    top: 50px;
 }
+
+.monograph-card {
+    background: white;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.monograph-header {
+    background: linear-gradient(135deg, var(--primary) 0%, #1a252f 100%);
+    color: white;
+    padding: 30px;
+    position: relative;
+}
+
+.monograph-type {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    opacity: 0.8;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.monograph-name {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.monograph-id {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.7rem;
+    margin-top: 15px;
+    opacity: 0.5;
+    word-break: break-all;
+}
+
+.content-section {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    border-bottom: 1px solid var(--border);
+}
+
+    .content-section:last-child {
+        border-bottom: none;
+    }
+
+.section-label {
+    background-color: #fcfcfc;
+    padding: 25px 30px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+}
+
+.section-text {
+    padding: 25px 30px;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 600px) {
+    .content-section {
+        grid-template-columns: 1fr;
+    }
+
+    .section-label {
+        padding-bottom: 5px;
+        border-right: none;
+    }
+}
+
+
+
+
+
+
+/* Container for the whole card */
+.mainMonograph {
+    max-width: 600px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    border: 1px solid #edf2f7;
+}
+
+/* Header Section */
+.monographHeader {
+    background-color: #f8fafc;
+    padding: 24px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+    .monographHeader h2 {
+        margin: 0;
+        color: #1a202c;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+.monographType {
+    margin: 4px 0 0 0;
+    color: #64748b;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+/* Content Body */
+.monographContents {
+    padding: 24px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+    .section:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Section Titles (e.g., Content, Indications) */
+    .section .header {
+        font-weight: 600;
+        color: #4a5568;
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-color: #cbd5e0;
+    }
+
+    /* Section Body Text */
+    .section .text {
+        color: #2d3748;
+        line-height: 1.6;
+        font-size: 1rem;
+    }

@@ -15,8 +15,15 @@ namespace WEB.Components.Pages
         {
             string? json_records = await _monograph.InvokeGetAsync<string>("api/v1/Monograph");
             _records = JsonSerializer.Deserialize<List<MonographModel>>(json_records);
+
+            if (_isAscending)
+                _records = _records.OrderBy(p => p.MonographName).ToList();
+            else
+                _records = _records.OrderByDescending(p => p.MonographName).ToList();
+
             _filteredList = _records;
             _pagedMonographs = _records;
+            _MonographDropdown = _records.DistinctBy(r => r.MonographType).ToList();
             LoadTabMenu();
             CalculatePagination();
         }
@@ -29,28 +36,28 @@ namespace WEB.Components.Pages
 
         public void HandlePageChange(int newPage)
         {
-            currentPage = newPage;
+            _currentPage = newPage;
             RefreshItems();
         }
 
         public void HandlePageSizeChange(int newSize)
         {
-            pageSize = newSize;
-            currentPage = 1; // Reset to page 1 to prevent index out of range
+            _pageSize = newSize;
+            _currentPage = 1; // Reset to page 1 to prevent index out of range
             CalculatePagination();
         }
 
         public void CalculatePagination()
         {
-            totalPages = (int)Math.Ceiling(_filteredList.Count / (double)pageSize);
+            _totalPages = (int)Math.Ceiling(_filteredList.Count / (double)_pageSize);
             RefreshItems();
         }
 
         public void RefreshItems()
         {
             _pagedMonographs = _filteredList
-                .Skip((currentPage - 1) * pageSize)
-                .Take(pageSize)
+                .Skip((_currentPage - 1) * _pageSize)
+                .Take(_pageSize)
                 .ToList();
         }
     }

@@ -1,4 +1,5 @@
-﻿using SHARED.Models;
+﻿using Microsoft.AspNetCore.Components;
+using SHARED.Models;
 
 namespace WEB.Components.Pages
 {
@@ -6,8 +7,7 @@ namespace WEB.Components.Pages
     {
         private void OnClickMonographs(MonographModel item)
         {
-            _selectedRecord = item;
-            // You can now access any property of 'item' here
+            _selectedMonograph = item;
         }
 
         private void OnSearch()
@@ -32,8 +32,6 @@ namespace WEB.Components.Pages
 
         }
 
-
-
         private void OnClear()
         {
 
@@ -41,7 +39,10 @@ namespace WEB.Components.Pages
             _pagedMonographs = _filteredList;
             _searchText = string.Empty;
             _SelectedType = "Select a Monograph Type";
-            _isAscending = true;
+            _isAscending = false;
+            _currentPage = 1;
+            _pageSize = 10;
+            HandlePageSizeChange(_pageSize);
 
         }
 
@@ -65,6 +66,13 @@ namespace WEB.Components.Pages
         {
             _SelectedType = optionName;
             _isOpenType = false;
+            OnSearch();
+        }
+
+        private void OnToggleSortBy(ChangeEventArgs e)
+        {
+            _isAscending = (bool)e.Value;
+            OnSearch();
         }
 
     }
