@@ -1,0 +1,30 @@
+﻿.vertical-divider {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.hover-pointer:hover {
+    cursor: pointer;
+}
+
+.margin-right {
+    margin-right: 5em !important;
+}
+
+.margin-left {
+    margin-left: 5em !important;
+}
+
+
+.sticky {
+    position: -webkit-sticky; /* Safari support */
+    position: sticky;
+    top: 0; /* Stick to the very top */
+    z-index: 1020; /* Ensure it stays above other content */
+    background-color: white; /* Prevents content behind it from showing through */
+}

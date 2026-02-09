@@ -1,0 +1,22 @@
+﻿@using System.Text.Json
+<div class="tab-pane fade show active">
+    <pre>
+        @GetPrettyJson()
+    </pre>
+</div>
+
+@code {
+    [Parameter] public MonographModel? Details { get; set; } = new();
+
+    private string GetPrettyJson()
+    {
+        if (Details == null) return "No data available";
+
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true // This adds the tabs and newlines
+        };
+
+        return JsonSerializer.Serialize(Details, options);
+    }
+}

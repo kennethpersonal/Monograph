@@ -1,0 +1,71 @@
+﻿<div class="d-flex justify-content-between align-items-center mt-3">
+    <select class="form-select w-auto" @onchange="OnPageSizeSelected">
+        <option value="10">10 per page</option>
+        <option value="20">20 per page</option>
+        <option value="50">50 per page</option>
+    </select>
+    <nav aria-label="Page navigation">
+        <ul class="pagination mb-0">
+            <li class="page-item @(CurrentPage == 1 ? "disabled" : "")">
+                <button class="page-link" @onclick="() => OnPageSelected(CurrentPage - 1)">Previous</button>
+            </li>
+
+            @foreach (var pageNumber in GetVisiblePages())
+            {
+                <li class="page-item @(CurrentPage == pageNumber ? "active" : "")">
+                    <button class="page-link" @onclick="() => OnPageSelected(pageNumber)">@pageNumber</button>
+                </li>
+            }
+
+            <li class="page-item @(CurrentPage == TotalPages ? "disabled" : "")">
+                <button class="page-link" @onclick="() => OnPageSelected(CurrentPage + 1)">Next</button>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+@code {
+    [Parameter] public int CurrentPage { get; set; }
+    [Parameter] public int TotalPages { get; set; }
+    [Parameter] public EventCallback<int> OnPageChanged { get; set; }
+    [Parameter] public EventCallback<int> OnPageSizeChanged { get; set; }
+    [Parameter] public int RecordCount { get; set; }
+    [Parameter] public int VisibleThreshold { get; set; }
+    [Parameter] public int DefaultPageSize { get; set; }
+
+    private async Task OnPageSelected(int page)
+    {
+        if (page >= 1 && page <= TotalPages)
+            await OnPageChanged.InvokeAsync(page);
+    }
+
+    private async Task OnPageSizeSelected(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out int newSize))
+            await OnPageSizeChanged.InvokeAsync(newSize);
+    }
+
+    // protected override async Task OnParametersSetAsync()
+    // {
+
+    //     GetVisiblePages();
+    // }
+
+    // Calculate the range of pages to display
+    private IEnumerable<int> GetVisiblePages()
+    {
+        int startPage = Math.Max(1, CurrentPage - (VisibleThreshold / 2));
+        int endPage = startPage + VisibleThreshold - 1;
+
+        TotalPages = (int)Math.Ceiling(RecordCount / (double)DefaultPageSize);
+
+        // Adjust if we go past the total pages
+        if (endPage > TotalPages)
+        {
+            endPage = TotalPages;
+            startPage = Math.Max(1, endPage - VisibleThreshold + 1);
+        }
+
+        return Enumerable.Range(startPage, endPage - startPage + 1);
+    }
+}

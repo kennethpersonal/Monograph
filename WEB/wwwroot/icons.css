@@ -1,12 +1,22 @@
-﻿.search-icon {
-    display: inline-block;
-    background-color: black;
-    -webkit-mask-image: url('icons/search-solid.svg');
+﻿[class*=".cicon-"] 
+{
+    display: block;
+}
+
+[class*=".cicon-"] {
+    display: block;
+}
+
+[class*=".cicon-"]::before {
+    content: '';
+    display: block;
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-background-size: contain;
+}
+
+.cicon-search {
     mask-image: url('icons/search-solid.svg');
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-position: center;
-    mask-position: center;
 }

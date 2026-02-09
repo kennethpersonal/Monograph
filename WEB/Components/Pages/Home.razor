@@ -1,14 +1,89 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 
 
-@inject IMonograph _monograph
 
-<div class="container-fluid p-0 text-center">
+<div class="container-fluid p-0 text-center position-relative">
     <img src="images/header.svg" class="img-fluid w-100" alt="biogesic" />
+    <div class="d-flex flex-column py-5 position-absolute top-0 start-0 w-50 margin-left">
+        <div class="d-flex justify-content-between w-100">
+            <button type="button" @onclick="OnClear" class="btn btn-outline-danger">Reset</button>
+            <input type="text" class="form-control mx-1" placeholder="Search..." @bind-value="_searchText" />
+            <button type="button" @onclick="@(() => OnSearch())" class="btn btn-primary">Search</button>
+        </div>
+        <div class="d-flex justify-content-start w-100 pt-3">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" @onclick="TypeToggleDropdown">
+                    @_SelectedType
+                </button>
+                <ul class="dropdown-menu @(_isOpenType ? "show" : "")">
+                    @foreach (var item in _records)
+                    {
+                        <li>
+                            <button class="dropdown-item" @onclick='() => SelectTyeOption(item.MonographType)'>@item.MonographType</button>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="form-check form-switch m-2">
+                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckChecked" @bind="_isAscending">
+                <label class="form-check-label text-light" for="switchCheckChecked">@(_isAscending ? "Ascending" : "Descending")</label>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="flex justify-content-end p-5">
-    <input type="text" class="form-control" placeholder="Search..." @bind-value="_search" />
-    <i class="search-icon border-1 h-50">22</i>
-</div>
 
+<div class="d-flex flex-row justify-content-start">
+    <div class="w-50 p-4">
+        <div class="list-group shadow-lg bg-whiteshadow-lg bg-white">
+            @foreach (var item in _pagedMonographs)
+            {
+                <a class="list-group-item hover-pointer" @onclick="(() => OnClickMonographs(item))">
+                    <div class="pt-2"><strong>@item.MonographName</strong></div>
+                    <div class="small pb-2">@item.MonographType</div>
+                </a>
+            }
+        </div>
+
+        <WEB.Components.Shared.Pagination CurrentPage="currentPage"
+                                          TotalPages="totalPages"
+                                          OnPageChanged="HandlePageChange"
+                                          OnPageSizeChanged="HandlePageSizeChange"
+                                          RecordCount="@_filteredList.Count"
+                                          VisibleThreshold="4"
+                                          DefaultPageSize="pageSize" />
+
+    </div>
+    <div class="px-5 w-100 sticky">
+        <div class="justify-content-center w-100">
+            <ul class="nav nav-pills py-5">
+                <li class="nav-item">
+                    <a class="nav-link @GetActiveClass("JSON")" @onclick='() => SetActiveTab("JSON")' href="#">JSON</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @GetActiveClass("Raw JSON")" @onclick='() => SetActiveTab("Raw JSON")' href="#">Raw JSON</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @GetActiveClass("DetailHtmlData")" @onclick='() => SetActiveTab("DetailHtmlData")' href="#">DetailHtmlData</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="tab-content" id="nav-tabContent">
+            @if (_activeTab == "JSON")
+            {
+                <WEB.Components.Pages.TabMenu.Json Details="_selectedRecord" />
+            }
+            else if (_activeTab == "Raw JSON")
+            {
+                <WEB.Components.Pages.TabMenu.RawJson Details="_selectedRecord" />
+            }
+            else if (_activeTab == "DetailHtmlData")
+            {
+                <WEB.Components.Pages.TabMenu.DetailHtmlData Details="_selectedRecord" />
+            }
+        </div>
+    </div>
+</div>

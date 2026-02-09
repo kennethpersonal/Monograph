@@ -1,37 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 using SHARED.Models;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class MonographController : Controller
     {
         [HttpGet]
         public async Task<IActionResult> List()
         {
-            // 1. Create the parent instance
-            var biogesicMonograph = new MonographModel
-            {
-                MonographId = Guid.Parse("16371ED2-BD4E-4E62-A7E5-9FA901886903"),
-                MonographName = "Biogesic",
-                MonographType = "Brief Monograph",
-                MonographContents = new List<MonographContent>() 
-            };
+            string filePath = "data.json";
+            string jsonData = await System.IO.File.ReadAllTextAsync(filePath);
 
-            biogesicMonograph.MonographContents.Add(new MonographContent
-            {
-                Header = "Content",
-                Text = "Paracetamol 500 mg"
-            });
-
-            biogesicMonograph.MonographContents.Add(new MonographContent
-            {
-                Header = "Indications",
-                Text = "Analgesic; antipyretic. Treatment of mild to moderate pain."
-            });
-
-            return Ok(biogesicMonograph);
+            return Ok(jsonData);
         }
 
         //// GET: MonographController/Details/5

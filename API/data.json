@@ -1,0 +1,902 @@
+[
+  {
+    "monographId": "9F7E812A-43B1-4D1C-8E2A-7149BC2890A1",
+    "monographName": "Biogesic",
+    "monographType": "OTC Guide",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Paracetamol 500 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Analgesic; antipyretic. Treatment of mild to moderate pain."
+      }
+    ]
+  },
+  {
+    "monographId": "1A2B3C4D-5E6F-4A7B-8C9D-0E1F2A3B4C5D",
+    "monographName": "Advil",
+    "monographType": "Patient Leaflet",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Ibuprofen 200 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "NSAID. Relief of fever, headache, and minor aches."
+      }
+    ]
+  },
+  {
+    "monographId": "D748F291-BC30-4E5A-9128-4491C0F2A931",
+    "monographName": "Amoxil",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Amoxicillin 500 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antibiotic for bacterial infections of the ear, nose, and throat."
+      }
+    ]
+  },
+  {
+    "monographId": "FE82A012-39BD-4712-A8C1-3F0217C6801A",
+    "monographName": "Lipitor",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Atorvastatin 20 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Statin for high cholesterol management and heart disease prevention."
+      }
+    ]
+  },
+  {
+    "monographId": "BC9921B2-2D45-4F23-B9E2-4C312887912D",
+    "monographName": "Glucophage",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Metformin 500 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antidiabetic agent for Type 2 Diabetes Mellitus."
+      }
+    ]
+  },
+  {
+    "monographId": "6C432D33-E563-4F34-C0F3-5D423998023E",
+    "monographName": "Zyrtec",
+    "monographType": "OTC Guide",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Cetirizine 10 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antihistamine for seasonal allergic rhinitis and chronic urticaria."
+      }
+    ]
+  },
+  {
+    "monographId": "91143D44-F674-4B45-D1F4-6E534009134F",
+    "monographName": "Nexium",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Esomeprazole 40 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Proton pump inhibitor for GERD and erosive esophagitis."
+      }
+    ]
+  },
+  {
+    "monographId": "F2254E55-A785-4C56-E2B5-7F645110245A",
+    "monographName": "Ventolin",
+    "monographType": "Patient Leaflet",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Albuterol 100 mcg"
+      },
+      {
+        "header": "Indications",
+        "text": "Bronchodilator for relief of bronchospasm in asthma patients."
+      }
+    ]
+  },
+  {
+    "monographId": "B3365F66-B896-4A67-F3C6-8E756221356B",
+    "monographName": "Synthroid",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Levothyroxine 50 mcg"
+      },
+      {
+        "header": "Indications",
+        "text": "Thyroid hormone replacement for hypothyroidism."
+      }
+    ]
+  },
+  {
+    "monographId": "E4476E77-C907-4E78-B4A7-9D867332467C",
+    "monographName": "Norvasc",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Amlodipine 5 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Calcium channel blocker for hypertension and chest pain."
+      }
+    ]
+  },
+  {
+    "monographId": "A5587E88-D018-4F89-A5C8-0B978443578D",
+    "monographName": "Zoloft",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Sertraline 50 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "SSRI for depression, OCD, and panic disorder."
+      }
+    ]
+  },
+  {
+    "monographId": "7D1B9A10-B2C3-4D4E-8F90-1A2B3C4D5E6F",
+    "monographName": "Lasix",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Furosemide 40 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Loop diuretic for edema and heart failure fluid management."
+      }
+    ]
+  },
+  {
+    "monographId": "8E2C0B21-C3D4-5E5F-9A01-2B3C4D5E6F7E",
+    "monographName": "Plavix",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Clopidogrel 75 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antiplatelet for stroke and heart attack prevention."
+      }
+    ]
+  },
+  {
+    "monographId": "9F3D1C32-D4E5-6F6A-0B12-3C4D5E6F7A8B",
+    "monographName": "Singulair",
+    "monographType": "Patient Leaflet",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Montelukast 10 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Leukotriene receptor antagonist for asthma and allergic rhinitis."
+      }
+    ]
+  },
+  {
+    "monographId": "A04E2D43-E5F6-7A7B-1C23-4D5E6F7A8B9E",
+    "monographName": "Effexor XR",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Venlafaxine 75 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "SNRI for major depressive disorder and anxiety."
+      }
+    ]
+  },
+  {
+    "monographId": "B15F3E54-F6A7-8E8B-2D34-5E6F7A8B9E0D",
+    "monographName": "Neurontin",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Gabapentin 300 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Anticonvulsant used for nerve pain and postherpetic neuralgia."
+      }
+    ]
+  },
+  {
+    "monographId": "C26A4F65-0A1B-9E9D-3E45-6F7A8B9E0D1C",
+    "monographName": "Claritin",
+    "monographType": "OTC Guide",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Loratadine 10 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Non-drowsy antihistamine for hay fever and allergy symptoms."
+      }
+    ]
+  },
+  {
+    "monographId": "D37B5A76-1B2C-0E0A-4F56-7A8B9E0D1C2B",
+    "monographName": "Cozaar",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Losartan 50 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Angiotensin II receptor antagonist for hypertension."
+      }
+    ]
+  },
+  {
+    "monographId": "E48C6B87-2C3D-1E1A-5A67-8B9E0D1C2B3A",
+    "monographName": "Ambien",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Zolpidem 10 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Sedative-hypnotic for short-term treatment of insomnia."
+      }
+    ]
+  },
+  {
+    "monographId": "F59D7E98-3D4E-2A2B-6B78-9E0D1C2B3A4F",
+    "monographName": "Cymbalta",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Duloxetine 30 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "SNRI for depression, anxiety, and fibromyalgia."
+      }
+    ]
+  },
+  {
+    "monographId": "060E8A09-4E5F-3B3C-7E89-0D1C2B3A4F5E",
+    "monographName": "Prilosec",
+    "monographType": "OTC Guide",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Omeprazole 20 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "PPI for acid reflux and stomach ulcers."
+      }
+    ]
+  },
+  {
+    "monographId": "171F9A10-5F6A-4B4C-8D90-1C2B3A4F5E6D",
+    "monographName": "Zithromax",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Azithromycin 250 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antibiotic for respiratory and skin infections."
+      }
+    ]
+  },
+  {
+    "monographId": "282A0B21-6A7B-5C5D-9E01-2B3A4F5E6D7C",
+    "monographName": "Valium",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Diazepam 5 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Benzodiazepine for anxiety and muscle spasms."
+      }
+    ]
+  },
+  {
+    "monographId": "393B1C32-7A8B-6D6E-0F12-3B3A4F5E6D7C",
+    "monographName": "Lyrica",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Pregabalin 75 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Treats nerve pain and partial-onset seizures."
+      }
+    ]
+  },
+  {
+    "monographId": "4A4C2D43-8A9B-7E7F-1A23-4B3A4F5E6D7C",
+    "monographName": "Xanax",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Alprazolam 0.5 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Benzodiazepine for panic disorder and anxiety relief."
+      }
+    ]
+  },
+  {
+    "monographId": "5B5D3E54-9A0B-8F8A-2B34-5B3A4F5E6D7C",
+    "monographName": "Augmentin",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Amoxicillin/Clavulanate 875 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Combination antibiotic for resistant bacterial infections."
+      }
+    ]
+  },
+  {
+    "monographId": "6C6E4F65-0A1B-9A9B-3C45-6B3A4F5E6D7C",
+    "monographName": "Levaquin",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Levofloxacin 500 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Fluoroquinolone antibiotic for severe infections."
+      }
+    ]
+  },
+  {
+    "monographId": "7D7F5A76-1B2C-0A0B-4D56-7B3A4F5E6D7C",
+    "monographName": "Celebrex",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Celecoxib 200 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "COX-2 inhibitor for arthritis and acute pain."
+      }
+    ]
+  },
+  {
+    "monographId": "8E8A6B87-2C3D-1A1B-5E67-8B3A4F5E6D7C",
+    "monographName": "Flonase",
+    "monographType": "Patient Leaflet",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Fluticasone 50 mcg"
+      },
+      {
+        "header": "Indications",
+        "text": "Nasal steroid for allergic rhinitis symptoms."
+      }
+    ]
+  },
+  {
+    "monographId": "9F9B7C98-3D4E-2B2C-6F78-9B3A4F5E6D7C",
+    "monographName": "Crestor",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Rosuvastatin 10 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Statin for lowering LDL cholesterol and triglycerides."
+      }
+    ]
+  },
+  {
+    "monographId": "A0AC8D09-4E5F-3C3D-7A89-0B3A4F5E6D7C",
+    "monographName": "Lopressor",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Metoprolol 50 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Beta-blocker for hypertension and heart failure."
+      }
+    ]
+  },
+  {
+    "monographId": "B1BD9E10-5F6A-4D4E-8B90-1B3A4F5E6D7C",
+    "monographName": "Prozac",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Fluoxetine 20 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "SSRI for major depression and bulimia nervosa."
+      }
+    ]
+  },
+  {
+    "monographId": "C2CE0F21-6A7B-5E5F-9C01-2B3A4F5E6D7C",
+    "monographName": "Voltaren",
+    "monographType": "Patient Leaflet",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Diclofenac 50 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "NSAID for joint pain and inflammation."
+      }
+    ]
+  },
+  {
+    "monographId": "D3DF1A32-7A8B-6F6A-0D12-3B3A4F5E6D7C",
+    "monographName": "Mobic",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Meloxicam 15 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "NSAID for osteoarthritis and rheumatoid arthritis."
+      }
+    ]
+  },
+  {
+    "monographId": "E4EC2B43-8B9C-7A7B-1E23-4B3A4F5E6D7C",
+    "monographName": "Keflex",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Cephalexin 500 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antibiotic for skin and urinary tract infections."
+      }
+    ]
+  },
+  {
+    "monographId": "F5FD3C54-9C9D-8B8C-2F34-5B3A4F5E6D7C",
+    "monographName": "Tamsulosin",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Flomax 0.4 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Alpha-blocker for symptoms of enlarged prostate."
+      }
+    ]
+  },
+  {
+    "monographId": "060A4D65-0D1E-9C9D-3A45-6B3A4F5E6D7C",
+    "monographName": "Abilify",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Aripiprazole 5 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antipsychotic for schizophrenia and bipolar disorder."
+      }
+    ]
+  },
+  {
+    "monographId": "171B5E76-1E2F-0D0E-4B56-7A8B9C0D1E2F",
+    "monographName": "Wellbutrin XL",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Bupropion 150 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antidepressant and smoking cessation aid."
+      }
+    ]
+  },
+  {
+    "monographId": "282C6F87-2A3B-1E1F-5C67-8B9C0D1E2F3E",
+    "monographName": "Imitrex",
+    "monographType": "Patient Leaflet",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Sumatriptan 50 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Triptan for treatment of acute migraine."
+      }
+    ]
+  },
+  {
+    "monographId": "393D7A98-3B4C-2F2A-6D78-9C0D1E2F3A4B",
+    "monographName": "Pepcid",
+    "monographType": "OTC Guide",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Famotidine 20 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "H2 blocker for heartburn and acid indigestion."
+      }
+    ]
+  },
+  {
+    "monographId": "4A4E8B09-4C5D-3A3B-7E89-0D1E2F3A4B5C",
+    "monographName": "Spironolactone",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Aldactone 25 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Potassium-sparing diuretic for hypertension."
+      }
+    ]
+  },
+  {
+    "monographId": "5B5F9C10-5D6E-4B4C-8F90-1E2F3A4B5C6D",
+    "monographName": "Ativan",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Lorazepam 1 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Benzodiazepine for anxiety disorders."
+      }
+    ]
+  },
+  {
+    "monographId": "6C6A0D21-6E7A-5C5D-9A01-2F3A4B5C6D7E",
+    "monographName": "Dilantin",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Phenytoin 100 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Anticonvulsant for seizure control."
+      }
+    ]
+  },
+  {
+    "monographId": "7D7B1E32-7A7B-6D6E-0B12-3A4B5C6D7E8F",
+    "monographName": "Altace",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Ramipril 5 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "ACE inhibitor for high blood pressure."
+      }
+    ]
+  },
+  {
+    "monographId": "8E8C2F43-8B8C-7E7F-1C23-4B5C6D7E8F9A",
+    "monographName": "Flagyl",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Metronidazole 500 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antibacterial and antiprotozoal agent."
+      }
+    ]
+  },
+  {
+    "monographId": "9F9D3A54-9C9D-8F8A-2D34-5C6D7E8F9A0B",
+    "monographName": "Naprosyn",
+    "monographType": "Patient Leaflet",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Naproxen 500 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "NSAID for long-term pain management."
+      }
+    ]
+  },
+  {
+    "monographId": "A0AC4B65-0E0F-9A9B-3E45-6D7E8F9A0B1C",
+    "monographName": "Catapres",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Clonidine 0.1 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Centrally acting alpha-agonist for hypertension."
+      }
+    ]
+  },
+  {
+    "monographId": "B1BD5C76-1F1A-0B0C-4F56-7E8F9A0B1C2D",
+    "monographName": "Zyloprim",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Allopurinol 300 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Xanthine oxidase inhibitor for gout prevention."
+      }
+    ]
+  },
+  {
+    "monographId": "C2CE6D87-2A2B-1C1D-5A67-8F9A0B1C2D3E",
+    "monographName": "Flexeril",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Cyclobenzaprine 10 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Muscle relaxant for short-term muscle spasms."
+      }
+    ]
+  },
+  {
+    "monographId": "D3DF7E98-3B3C-2D2E-6B78-9A0B1C2D3E4F",
+    "monographName": "Robitussin",
+    "monographType": "OTC Guide",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Guaifenesin 200 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Expectorant to help loosen phlegm."
+      }
+    ]
+  },
+  {
+    "monographId": "E4EC8F09-4C4D-3E3F-7C89-0B1C2D3E4F5A",
+    "monographName": "Imodium",
+    "monographType": "OTC Guide",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Loperamide 2 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antidiarrheal agent."
+      }
+    ]
+  },
+  {
+    "monographId": "F5FD9A10-5D5E-4F4A-8D90-1C2B3C4D5E6F",
+    "monographName": "Colace",
+    "monographType": "OTC Guide",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Docusate Sodium 100 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Stool softener for constipation."
+      }
+    ]
+  },
+  {
+    "monographId": "060A0B21-6B6C-5D5E-9A01-2B3C4D5E6F7A",
+    "monographName": "Benadryl",
+    "monographType": "OTC Guide",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Diphenhydramine 25 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antihistamine for allergic reactions."
+      }
+    ]
+  },
+  {
+    "monographId": "171B1C32-7C7D-6E6F-0A12-3B3C4D5E6F7B",
+    "monographName": "Cipro",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Ciprofloxacin 500 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antibiotic for various bacterial infections."
+      }
+    ]
+  },
+  {
+    "monographId": "282C2D43-8D8E-7F7A-1B23-4B3C4D5E6F7C",
+    "monographName": "Diflucan",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Fluconazole 150 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antifungal for yeast infections."
+      }
+    ]
+  },
+  {
+    "monographId": "393D3E54-9E9F-8A8B-2C34-5B3C4D5E6F7D",
+    "monographName": "Januvia",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Sitagliptin 100 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "DPP-4 inhibitor for Type 2 Diabetes."
+      }
+    ]
+  },
+  {
+    "monographId": "4A4E4F65-0A0B-9B9C-3D45-6B3C4D5E6F7E",
+    "monographName": "Aldomet",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Methyldopa 250 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Antihypertensive for pregnancy-induced hypertension."
+      }
+    ]
+  },
+  {
+    "monographId": "5B5A5E76-1B1C-0D0E-4F56-7B3C4D5E6F7F",
+    "monographName": "Cardizem",
+    "monographType": "Clinical Summary",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Diltiazem 30 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Calcium channel blocker for heart rhythm disorders."
+      }
+    ]
+  },
+  {
+    "monographId": "6C6B6F87-2C2D-1E1F-5A67-8B3C4D5E6F7A",
+    "monographName": "Bactrim",
+    "monographType": "Professional Monograph",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Sulfamethoxazole/Trimethoprim"
+      },
+      {
+        "header": "Indications",
+        "text": "Combination antibiotic for UTIs and bronchitis."
+      }
+    ]
+  },
+  {
+    "monographId": "7D7C7A98-3D3E-2F2A-6B78-9B3C4D5E6F7B",
+    "monographName": "Inderal",
+    "monographType": "Prescribing Information",
+    "monographContents": [
+      {
+        "header": "Content",
+        "text": "Propranolol 40 mg"
+      },
+      {
+        "header": "Indications",
+        "text": "Beta-blocker for tremors and performance anxiety."
+      }
+    ]
+  }
+]

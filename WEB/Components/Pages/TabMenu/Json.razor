@@ -1,0 +1,23 @@
+﻿<div class="tab-pane fade show active">
+    <div class="card w-50">
+        <img class="card-img-top" src="images/biogesic.svg">
+        <div class="card-body">
+            <h2 class="card-title"><strong>@Details?.MonographName</strong></h2>
+            <p>@Details?.MonographType</p>
+            @if (Details?.MonographContents != null)
+            {
+                foreach (var item in Details.MonographContents)
+                {
+                    <p><b>@item.Header:</b> @item.Text</p>
+                }
+            }
+        </div>
+    </div>
+
+
+</div>
+
+
+@code {
+    [Parameter] public MonographModel? Details { get; set; } = new();
+}
