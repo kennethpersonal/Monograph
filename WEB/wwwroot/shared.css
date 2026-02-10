@@ -137,3 +137,51 @@
     transform: translateX(5px); /* Subtle slide effect on hover */
 }
 
+
+
+.hint-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+
+.hint-glass {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    /* Pleasing Colors: Soft Indigo/Blue */
+    background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+    border: 1px solid #dbeafe;
+    border-radius: 50px; /* Fully rounded "pill" shape is easier on the eyes */
+
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+    .hint-glass:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.08);
+    }
+
+.hint-icon {
+    font-size: 1.1rem;
+}
+
+.hint-text {
+    color: #475569; /* Soft Slate Grey */
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.hint-code {
+    background: #4f46e5;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    margin: 0 4px;
+    font-weight: bold;
+}

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using SHARED.Models;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 namespace WEB.Components.Pages
@@ -23,7 +24,7 @@ namespace WEB.Components.Pages
             }
             catch (Exception ex)
             {
-
+                _hasError = true;
             }
             finally
             {
@@ -33,21 +34,38 @@ namespace WEB.Components.Pages
 
         private void OnSearch()
         {
+            try
+            {
+                _filteredList = _records;
 
-            _filteredList = _records;
+                if (!string.IsNullOrWhiteSpace(_searchText))
+                {
+                    if (_searchText.ToLower() == "error")
+                    {
+                        throw new Exception();
+                    }
+                    else
+                    {
+                        _filteredList = _filteredList.Where(p => p.MonographName.Contains(_searchText, StringComparison.OrdinalIgnoreCase)).ToList();
+                    }
+                }
 
-            if (!string.IsNullOrWhiteSpace(_searchText))
-                _filteredList = _filteredList.Where(p => p.MonographName.Contains(_searchText, StringComparison.OrdinalIgnoreCase)).ToList();
 
-            if (_SelectedType != "Select a Monograph Type")
-                _filteredList = _filteredList.Where(p => p.MonographType.Contains(_SelectedType, StringComparison.OrdinalIgnoreCase)).ToList();
+                if (_SelectedType != "Select a Monograph Type")
+                    _filteredList = _filteredList.Where(p => p.MonographType.Contains(_SelectedType, StringComparison.OrdinalIgnoreCase)).ToList();
 
-            if (_isAscending)
-                _filteredList = _filteredList.OrderBy(p => p.MonographName).ToList();
-            else
-                _filteredList = _filteredList.OrderByDescending(p => p.MonographName).ToList();
+                if (_isAscending)
+                    _filteredList = _filteredList.OrderBy(p => p.MonographName).ToList();
+                else
+                    _filteredList = _filteredList.OrderByDescending(p => p.MonographName).ToList();
 
-            _pagedMonographs = _filteredList;
+                _pagedMonographs = _filteredList;
+            }
+            catch (Exception)
+            {
+                _hasError = true;
+            }
+           
 
         }
 
@@ -74,11 +92,6 @@ namespace WEB.Components.Pages
         private string GetActiveClass(string tabName)
         {
             return _activeTab == tabName ? "active" : "";
-        }
-
-        private void TypeToggleDropdown()
-        {
-            _isOpenType = !_isOpenType;
         }
 
         private void SelectTypeOption(string optionName)

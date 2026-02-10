@@ -1,0 +1,38 @@
+﻿.error-container {
+    padding: 3rem;
+    text-align: center;
+    background: #fff5f5;
+    border: 1.5px dashed #feb2b2;
+    border-radius: 12px;
+    margin: 20px;
+}
+
+.error-icon {
+    font-size: 3rem;
+    color: #f56565;
+    margin-bottom: 1rem;
+}
+
+.error-title {
+    color: #2d3748;
+    font-weight: 700;
+}
+
+.error-message {
+    color: #718096;
+    margin-bottom: 1.5rem;
+}
+
+.btn-retry {
+    background: #4f46e5;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+    .btn-retry:hover {
+        background: #4338ca;
+        transform: translateY(-1px);
+    }

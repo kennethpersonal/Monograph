@@ -20,74 +20,90 @@
     </div>
 </div>
 
-@if (_pagedMonographs.Count == 0)
+<div class="hint-wrapper mx-4">
+    <div class="hint-glass">
+        <span class="hint-icon">💡</span>
+        <div class="hint-text">
+            NOTE: To test the error message, type <span class="hint-code">"error"</span> in search bar then click search button.
+        </div>
+    </div>
+</div>
+
+@if (_hasError)
 {
-    <WEB.Components.Shared.NoRecordFound />
+    <WEB.Components.Shared.ErrorDisplay />
 }
 else
 {
+    @if (_pagedMonographs.Count == 0)
+    {
+        <WEB.Components.Shared.NoRecordFound />
+    }
+    else
+    {
 
-    <div class="d-flex flex-row justify-content-start">
-        <div class="w-50 p-4">
-            <WEB.Components.Shared.ListView Items="_pagedMonographs"
-                                            SelectedMonograph="_selectedMonograph"
-                                            OnItemSelected="OnClickMonographs" />
+        <div class="d-flex flex-row justify-content-start">
+            <div class="w-50 p-4">
+                <WEB.Components.Shared.ListView Items="_pagedMonographs"
+                                                SelectedMonograph="_selectedMonograph"
+                                                OnItemSelected="OnClickMonographs" />
 
 
-            <WEB.Components.Shared.Pagination CurrentPage="_currentPage"
-                                              TotalPages="_totalPages"
-                                              OnPageChanged="HandlePageChange"
-                                              OnPageSizeChanged="HandlePageSizeChange"
-                                              RecordCount="@_filteredList.Count"
-                                              VisibleThreshold="3"
-                                              DefaultPageSize="_pageSize" />
-        </div>
-        <div class="px-5 w-100">
-            <div class="sticky w-100 pt-4">
-                @if (_selectedMonograph != null || _lodingDetails)
-                {
-                    if (_lodingDetails)
+                <WEB.Components.Shared.Pagination CurrentPage="_currentPage"
+                                                  TotalPages="_totalPages"
+                                                  OnPageChanged="HandlePageChange"
+                                                  OnPageSizeChanged="HandlePageSizeChange"
+                                                  RecordCount="@_filteredList.Count"
+                                                  VisibleThreshold="3"
+                                                  DefaultPageSize="_pageSize" />
+            </div>
+            <div class="px-5 w-100">
+                <div class="sticky w-100 pt-4">
+                    @if (_selectedMonograph != null || _lodingDetails)
                     {
-                        <WEB.Components.Shared.Skeleton />
+                        if (_lodingDetails)
+                        {
+                            <WEB.Components.Shared.Skeleton />
+                        }
+                        else
+                        {
+                            <div class="justify-content-center w-100">
+                                <ul class="nav nav-pills pt-2 pb-5">
+                                    <li class="nav-item">
+                                        <a class="nav-link @GetActiveClass("JSON")" @onclick='() => SetActiveTab("JSON")' href="#">JSON</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link @GetActiveClass("Raw JSON")" @onclick='() => SetActiveTab("Raw JSON")' href="#">Raw JSON</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link @GetActiveClass("DetailHtmlData")" @onclick='() => SetActiveTab("DetailHtmlData")' href="#">DetailHtmlData</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="tab-content" id="nav-tabContent">
+                                @if (_activeTab == "JSON")
+                                {
+                                    <WEB.Components.Pages.TabMenu.Json Details="_selectedMonograph" />
+                                }
+                                else if (_activeTab == "Raw JSON")
+                                {
+                                    <WEB.Components.Pages.TabMenu.RawJson Details="_selectedMonograph" />
+                                }
+                                else if (_activeTab == "DetailHtmlData")
+                                {
+                                    <WEB.Components.Pages.TabMenu.DetailHtmlData Details="_selectedMonograph" />
+                                }
+                            </div>
+                        }
                     }
                     else
                     {
-                        <div class="justify-content-center w-100">
-                            <ul class="nav nav-pills pt-2 pb-5">
-                                <li class="nav-item">
-                                    <a class="nav-link @GetActiveClass("JSON")" @onclick='() => SetActiveTab("JSON")' href="#">JSON</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @GetActiveClass("Raw JSON")" @onclick='() => SetActiveTab("Raw JSON")' href="#">Raw JSON</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @GetActiveClass("DetailHtmlData")" @onclick='() => SetActiveTab("DetailHtmlData")' href="#">DetailHtmlData</a>
-                                </li>
-                            </ul>
-                        </div>
-
-
-                        <div class="tab-content" id="nav-tabContent">
-                            @if (_activeTab == "JSON")
-                            {
-                                <WEB.Components.Pages.TabMenu.Json Details="_selectedMonograph" />
-                            }
-                            else if (_activeTab == "Raw JSON")
-                            {
-                                <WEB.Components.Pages.TabMenu.RawJson Details="_selectedMonograph" />
-                            }
-                            else if (_activeTab == "DetailHtmlData")
-                            {
-                                <WEB.Components.Pages.TabMenu.DetailHtmlData Details="_selectedMonograph" />
-                            }
-                        </div>
+                        <WEB.Components.Shared.SelectMonographDisplay />
                     }
-                }
-                else
-                {
-                    <WEB.Components.Shared.SelectMonographDisplay />
-                }
+                </div>
             </div>
         </div>
-    </div>
+    }
 }
