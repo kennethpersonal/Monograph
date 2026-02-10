@@ -9,8 +9,13 @@ namespace WEB.Components.Pages
         private async Task OnClickMonographs(MonographModel item)
         {
             _lodingDetails = true;
+
             MonographModel json_records = await _monograph.InvokeGetAsync<MonographModel>($"api/v1/Monograph/{item.MonographId}");
-            _selectedMonograph = json_records;
+
+            if (json_records.MonographId == item.MonographId)
+                _selectedMonograph = item;
+
+            await Task.Delay(1000);
 
             _lodingDetails = false;
         }
@@ -22,11 +27,9 @@ namespace WEB.Components.Pages
 
             if (!string.IsNullOrWhiteSpace(_searchText))
                 _filteredList = _filteredList.Where(p => p.MonographName.Contains(_searchText, StringComparison.OrdinalIgnoreCase)).ToList();
-            
 
             if (_SelectedType != "Select a Monograph Type")
                 _filteredList = _filteredList.Where(p => p.MonographType.Contains(_SelectedType, StringComparison.OrdinalIgnoreCase)).ToList();
-
 
             if (_isAscending)
                 _filteredList = _filteredList.OrderBy(p => p.MonographName).ToList();

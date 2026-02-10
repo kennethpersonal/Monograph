@@ -17,7 +17,7 @@ namespace WEB.Components.Pages
         public string _SelectedType = "Select a Monograph Type";
         public string _activeTab = "JSON";
         public bool _isAscending = true;
-        public bool _lodingDetails = true;
+        public bool _lodingDetails = false;
 
         private bool _isOpenType = false;
 

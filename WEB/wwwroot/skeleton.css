@@ -2,11 +2,9 @@
 
 
 .skeleton-card {
-    max-width: 600px;
     margin: 20px auto;
     background: #ffffff;
     border-radius: 12px;
-    border: 1px solid #edf2f7;
     overflow: hidden;
     padding: 24px;
 }

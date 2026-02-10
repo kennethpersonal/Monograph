@@ -64,8 +64,7 @@ else
         </div>
         <div class="px-5 w-100">
             <div class="sticky w-100 pt-4">
-
-                @if (_selectedMonograph != null)
+                @if (_selectedMonograph != null || _lodingDetails)
                 {
                     if (_lodingDetails)
                     {
@@ -74,7 +73,7 @@ else
                     else
                     {
                         <div class="justify-content-center w-100">
-                            <ul class="nav nav-pills py-5">
+                            <ul class="nav nav-pills pt-2 pb-5">
                                 <li class="nav-item">
                                     <a class="nav-link @GetActiveClass("JSON")" @onclick='() => SetActiveTab("JSON")' href="#">JSON</a>
                                 </li>
