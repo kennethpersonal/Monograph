@@ -31,7 +31,7 @@ namespace WEB.Components.Pages
         public List<MonographModel> PagedItems = new();
 
         public int _currentPage = 1;
-        public int _pageSize = 10; // Default size
+        public int _pageSize = 10;
         public int _totalPages;
 
 

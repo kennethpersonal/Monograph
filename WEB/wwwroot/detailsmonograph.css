@@ -1,9 +1,4 @@
 ﻿
-
-
-
-
-/* Container for the whole card */
 .mainMonograph {
     max-width: 600px;
     background: #ffffff;
@@ -14,7 +9,7 @@
     border: 1px solid #edf2f7;
 }
 
-/* Header Section */
+
 .monographHeader {
     background-color: #f8fafc;
     padding: 24px;
@@ -36,7 +31,6 @@
     letter-spacing: 0.025em;
 }
 
-/* Content Body */
 .monographContents {
     padding: 24px;
 }
@@ -49,7 +43,6 @@
         margin-bottom: 0;
     }
 
-    /* Section Titles (e.g., Content, Indications) */
     .section .header {
         font-weight: 600;
         color: #4a5568;
@@ -60,7 +53,6 @@
         text-decoration-color: #cbd5e0;
     }
 
-    /* Section Body Text */
     .section .text {
         color: #2d3748;
         line-height: 1.6;

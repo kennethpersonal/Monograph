@@ -88,7 +88,6 @@ namespace WEB.Components.Pages
             _activeTab = tabName;
         }
 
-        // Helper method to keep the HTML clean
         private string GetActiveClass(string tabName)
         {
             return _activeTab == tabName ? "active" : "";

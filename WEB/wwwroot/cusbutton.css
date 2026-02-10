@@ -1,24 +1,22 @@
-﻿/* Base Button Styling */
+﻿
 .cbtn {
     padding: 10px 22px;
     border-radius: 8px;
     font-size: 0.95rem;
     font-weight: 600;
-    border: 2px solid transparent; /* Preset border to prevent jumping on hover */
+    border: 2px solid transparent;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     gap: 8px;
-    /* This ensures the entire body transitions smoothly */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-    /* Hover effect for all solid buttons */
     .cbtn:hover {
         transform: translateY(-2px);
-        filter: brightness(1.15); /* Brightens the entire body */
+        filter: brightness(1.15);
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
     }
 
@@ -26,40 +24,39 @@
         transform: translateY(0);
     }
 
-/* Color Types - Using a more modern "SaaS" palette */
 .cbtn-primary {
-    background-color: #4f46e5; /* Modern Indigo */
+    background-color: #4f46e5;
     color: white;
 }
 
 .cbtn-info {
-    background-color: #0ea5e9; /* Modern Sky Blue */
+    background-color: #0ea5e9;
     color: white;
 }
 
 .cbtn-success {
-    background-color: #10b981; /* Modern Emerald */
+    background-color: #10b981;
     color: white;
 }
 
 .cbtn-warning {
-    background-color: #f59e0b; /* Amber */
+    background-color: #f59e0b;
     color: white;
 }
 
 .cbtn-danger {
-    background-color: #ef4444; /* Rose/Red */
+    background-color: #ef4444;
     color: white;
 }
 
-/* Outline Style - Significantly improved hover for the "Body" */
+
 .cbtn-outline {
     background-color: transparent;
     border: 2px solid #e2e8f0;
     color: #64748b;
 }
 
-    /* When hovering the outline button, the "Body" fills in */
+
     .cbtn-outline:hover {
         background-color: #f8fafc;
         border-color: #94a3b8;

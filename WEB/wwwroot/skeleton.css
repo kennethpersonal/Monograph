@@ -1,6 +1,4 @@
 ﻿
-
-
 .skeleton-card {
     margin: 20px auto;
     background: #ffffff;
@@ -9,7 +7,7 @@
     padding: 24px;
 }
 
-/* The Shimmer Animation */
+
 .skeleton-title, .skeleton-subtitle, .skeleton-label, .skeleton-text {
     background: #eee;
     background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
@@ -24,7 +22,6 @@
     }
 }
 
-/* Shaping the elements */
 .skeleton-header {
     margin-bottom: 30px;
 }

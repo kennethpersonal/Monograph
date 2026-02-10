@@ -45,13 +45,6 @@
             await OnPageSizeChanged.InvokeAsync(newSize);
     }
 
-    // protected override async Task OnParametersSetAsync()
-    // {
-
-    //     GetVisiblePages();
-    // }
-
-    // Calculate the range of pages to display
     private IEnumerable<int> GetVisiblePages()
     {
         int startPage = Math.Max(1, CurrentPage - (VisibleThreshold / 2));
@@ -59,7 +52,6 @@
 
         TotalPages = (int)Math.Ceiling(RecordCount / (double)DefaultPageSize);
 
-        // Adjust if we go past the total pages
         if (endPage > TotalPages)
         {
             endPage = TotalPages;

@@ -41,7 +41,7 @@ namespace WEB.Components.Pages
         public void HandlePageSizeChange(int newSize)
         {
             _pageSize = newSize;
-            _currentPage = 1; // Reset to page 1 to prevent index out of range
+            _currentPage = 1;
             CalculatePagination();
         }
 

@@ -39,7 +39,6 @@
     font-size: 1rem;
 }
 
-/* Illustration Styling */
 .empty-state-content {
     flex-grow: 1;
     display: flex;
@@ -55,7 +54,7 @@
 .circle-bg {
     width: 180px;
     height: 180px;
-    background-color: #fce4ec; /* Soft pink background from image */
+    background-color: #fce4ec;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -63,7 +62,6 @@
     position: relative;
 }
 
-/* This mimics the "card selection" icon in your image */
 .illustration-icon {
     font-size: 4rem;
     color: #e91e63;
