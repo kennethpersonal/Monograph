@@ -9,8 +9,6 @@ namespace WEB.Components.Pages
 {
     public partial class Home
     {
-
-
         protected override async Task OnInitializedAsync()
         {
             string? json_records = await _monograph.InvokeGetAsync<string>("api/v1/Monograph");

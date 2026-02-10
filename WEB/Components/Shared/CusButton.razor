@@ -1,0 +1,32 @@
+﻿
+
+<button class="cbtn cbtn-@Type.ToString() @Class" @onclick="OnClick">
+    @Text
+</button>
+
+@code {
+    [Parameter]
+    public string Class { get; set; } = "Button";
+
+    [Parameter]
+    public string Text { get; set; } = "Button";
+
+    [Parameter]
+    public string? Icon { get; set; }
+
+    [Parameter]
+    public ButtonType Type { get; set; } = ButtonType.primary;
+
+    [Parameter]
+    public EventCallback OnClick { get; set; }
+
+    public enum ButtonType
+    {
+        primary,
+        info,
+        success,
+        warning,
+        danger,
+        outline,
+    }
+}

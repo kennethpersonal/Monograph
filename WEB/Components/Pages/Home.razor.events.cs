@@ -1,13 +1,18 @@
 ﻿using Microsoft.AspNetCore.Components;
 using SHARED.Models;
+using System.Text.Json;
 
 namespace WEB.Components.Pages
 {
     public partial class Home
     {
-        private void OnClickMonographs(MonographModel item)
+        private async Task OnClickMonographs(MonographModel item)
         {
-            _selectedMonograph = item;
+            _lodingDetails = true;
+            MonographModel json_records = await _monograph.InvokeGetAsync<MonographModel>($"api/v1/Monograph/{item.MonographId}");
+            _selectedMonograph = json_records;
+
+            _lodingDetails = false;
         }
 
         private void OnSearch()
@@ -62,16 +67,16 @@ namespace WEB.Components.Pages
             _isOpenType = !_isOpenType;
         }
 
-        private void SelectTyeOption(string optionName)
+        private void SelectTypeOption(string optionName)
         {
             _SelectedType = optionName;
             _isOpenType = false;
             OnSearch();
         }
 
-        private void OnToggleSortBy(ChangeEventArgs e)
+        private void OnToggleSortBy(bool value)
         {
-            _isAscending = (bool)e.Value;
+            _isAscending = value;
             OnSearch();
         }
 

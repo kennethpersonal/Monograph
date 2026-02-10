@@ -1,0 +1,28 @@
+﻿
+<div class="sort-switch-container mx-2">
+    <div class="form-check form-switch custom-switch">
+        <input class="form-check-input"
+               type="checkbox"
+               role="switch"
+               id="sortSwitch"
+               checked="@IsAscending"
+               @onchange="HandleToggle">
+        <label class="form-check-label" for="sortSwitch">
+            <span class="sort-text">Sorted by</span>
+            <span class="sort-direction @(IsAscending ? "asc" : "desc")">
+                @(IsAscending ? "Ascending" : "Descending")
+            </span>
+        </label>
+    </div>
+</div>
+
+@code {
+    [Parameter] public bool IsAscending { get; set; }
+    [Parameter] public EventCallback<bool> OnToggle { get; set; }
+
+    private async Task HandleToggle(ChangeEventArgs e)
+    {
+        bool newValue = (bool)(e.Value ?? false);
+        await OnToggle.InvokeAsync(newValue);
+    }
+}

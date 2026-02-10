@@ -5,32 +5,16 @@
 
 <div class="container-fluid p-0 text-center position-relative">
     <img src="images/header.svg" class="img-fluid w-100" alt="biogesic" />
-    <div class="d-flex flex-column py-5 position-absolute top-0 start-0 w-50 margin-left">
-        <div class="d-flex justify-content-between w-100">
-            <button type="button" @onclick="OnClear" class="btn btn-outline-danger">Reset</button>
-            <input type="text" class="form-control mx-1" placeholder="Search..." @bind-value="_searchText" />
-            <button type="button" @onclick="@(() => OnSearch())" class="btn btn-primary">Search</button>
-        </div>
-        <div class="d-flex justify-content-start w-100 pt-3">
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" @onclick="TypeToggleDropdown">
-                    @_SelectedType
-                </button>
-                <ul class="dropdown-menu @(_isOpenType ? "show" : "")">
-                    @if (_MonographDropdown != null)
-                    {
-                        @foreach (var item in _MonographDropdown)
-                        {
-                            <li>
-                                <button class="dropdown-item" @onclick='() => SelectTyeOption(item.MonographType)'>@item.MonographType</button>
-                            </li>
-                        }
-                    }
-                </ul>
+    <div class="d-flex flex-row position-absolute top-0 start-0 w-100 margin-left py-4">
+        <WEB.Components.Shared.CusButton Class="h-50" Text="Reset" Type="Shared.CusButton.ButtonType.danger" OnClick="OnClear" />
+        <div class="d-flex flex-column w-50">
+            <div class="d-flex justify-content-between">
+                <input type="text" class="form-control mx-1" placeholder="Search..." @bind-value="_searchText" />
+                <WEB.Components.Shared.CusButton Text="Search" Type="Shared.CusButton.ButtonType.info" OnClick="OnSearch" />
             </div>
-            <div class="form-check form-switch m-2">
-                <input class="form-check-input hover-pointer" type="checkbox" role="switch" id="switchCheckChecked" checked="@_isAscending" @onchange="OnToggleSortBy">
-                <label class="form-check-label text-light hover-pointer" for="switchCheckChecked">Sorted by @(_isAscending ? "Ascending" : "Descending")</label>
+            <div class="d-flex justify-content-start pt-2 px-1">
+                <WEB.Components.Shared.CusDropdown SelectedType="@_SelectedType" Options="@_MonographDropdown?.Select(x => x.MonographType)" OnSelected="SelectTypeOption" />
+                <WEB.Components.Shared.ToggleSwitch IsAscending="@_isAscending" OnToggle="OnToggleSortBy" />
             </div>
         </div>
     </div>
@@ -48,10 +32,25 @@ else
             <div class="list-group shadow-lg bg-whiteshadow-lg bg-white">
                 @foreach (var item in _pagedMonographs)
                 {
-                    <a class="list-group-item hover-pointer @(_selectedMonograph == item ? "active" : "")" @onclick="(() => OnClickMonographs(item))">
-                        <div class="pt-2"><strong>@item.MonographName</strong></div>
-                        <div class="small pb-2">@item.MonographType</div>
-                    </a>
+                    <button type="button"
+                            class="list-group-item list-group-item-action border-0 py-3 px-4 transition-all @(_selectedMonograph == item ? "active-monograph" : "")"
+                            @onclick="(() => OnClickMonographs(item))"
+                            style="cursor: pointer;">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="fw-bold mb-0 @(_selectedMonograph == item ? "text-white" : "text-dark")">
+                                    @item.MonographName
+                                </div>
+                                <div class="small @(_selectedMonograph == item ? "text-white-50" : "text-muted")">
+                                    @item.MonographType
+                                </div>
+                            </div>
+                            @if (_selectedMonograph == item)
+                            {
+                                <i class="bi bi-chevron-right text-white"></i>
+                            }
+                        </div>
+                    </button>
                 }
             </div>
 
@@ -60,42 +59,50 @@ else
                                               OnPageChanged="HandlePageChange"
                                               OnPageSizeChanged="HandlePageSizeChange"
                                               RecordCount="@_filteredList.Count"
-                                              VisibleThreshold="4"
+                                              VisibleThreshold="3"
                                               DefaultPageSize="_pageSize" />
         </div>
         <div class="px-5 w-100">
             <div class="sticky w-100 pt-4">
+
                 @if (_selectedMonograph != null)
                 {
-                    <div class="justify-content-center w-100">
-                        <ul class="nav nav-pills py-5">
-                            <li class="nav-item">
-                                <a class="nav-link @GetActiveClass("JSON")" @onclick='() => SetActiveTab("JSON")' href="#">JSON</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link @GetActiveClass("Raw JSON")" @onclick='() => SetActiveTab("Raw JSON")' href="#">Raw JSON</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link @GetActiveClass("DetailHtmlData")" @onclick='() => SetActiveTab("DetailHtmlData")' href="#">DetailHtmlData</a>
-                            </li>
-                        </ul>
-                    </div>
+                    if (_lodingDetails)
+                    {
+                        <WEB.Components.Shared.Skeleton />
+                    }
+                    else
+                    {
+                        <div class="justify-content-center w-100">
+                            <ul class="nav nav-pills py-5">
+                                <li class="nav-item">
+                                    <a class="nav-link @GetActiveClass("JSON")" @onclick='() => SetActiveTab("JSON")' href="#">JSON</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link @GetActiveClass("Raw JSON")" @onclick='() => SetActiveTab("Raw JSON")' href="#">Raw JSON</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link @GetActiveClass("DetailHtmlData")" @onclick='() => SetActiveTab("DetailHtmlData")' href="#">DetailHtmlData</a>
+                                </li>
+                            </ul>
+                        </div>
 
 
-                    <div class="tab-content" id="nav-tabContent">
-                        @if (_activeTab == "JSON")
-                        {
-                            <WEB.Components.Pages.TabMenu.Json Details="_selectedMonograph" />
-                        }
-                        else if (_activeTab == "Raw JSON")
-                        {
-                            <WEB.Components.Pages.TabMenu.RawJson Details="_selectedMonograph" />
-                        }
-                        else if (_activeTab == "DetailHtmlData")
-                        {
-                            <WEB.Components.Pages.TabMenu.DetailHtmlData Details="_selectedMonograph" />
-                        }
-                    </div>
+                        <div class="tab-content" id="nav-tabContent">
+                            @if (_activeTab == "JSON")
+                            {
+                                <WEB.Components.Pages.TabMenu.Json Details="_selectedMonograph" />
+                            }
+                            else if (_activeTab == "Raw JSON")
+                            {
+                                <WEB.Components.Pages.TabMenu.RawJson Details="_selectedMonograph" />
+                            }
+                            else if (_activeTab == "DetailHtmlData")
+                            {
+                                <WEB.Components.Pages.TabMenu.DetailHtmlData Details="_selectedMonograph" />
+                            }
+                        </div>
+                    }
                 }
                 else
                 {

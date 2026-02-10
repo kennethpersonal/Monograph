@@ -108,69 +108,32 @@
 
 
 
-
-
-
-/* Container for the whole card */
-.mainMonograph {
-    max-width: 600px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    border: 1px solid #edf2f7;
+.nav-pills .nav-link {
+    transition: all 0.3s ease;
+    color: #6c757d;
+    font-weight: 500;
 }
 
-/* Header Section */
-.monographHeader {
-    background-color: #f8fafc;
-    padding: 24px;
-    border-bottom: 1px solid #edf2f7;
-}
-
-    .monographHeader h2 {
-        margin: 0;
-        color: #1a202c;
-        font-size: 1.5rem;
-        font-weight: 700;
+    .nav-pills .nav-link.active {
+        background-color: #0d6efd; /* Adjust to your primary brand color */
+        box-shadow: 0 4px 6px rgba(13, 110, 253, 0.2);
     }
 
-.monographType {
-    margin: 4px 0 0 0;
-    color: #64748b;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.025em;
+
+
+/* Matches the smooth transition of your nav-pills */
+.transition-all {
+    transition: all 0.2s ease-in-out;
 }
 
-/* Content Body */
-.monographContents {
-    padding: 24px;
+/* Custom active state to match the "Professional Beautiful" theme */
+.active-monograph {
+    background-color: #0d6efd !important; /* Matches Bootstrap Primary */
+    border-left: 4px solid #0046b8; /* Adds a nice accent edge */
 }
 
-.section {
-    margin-bottom: 20px;
+.list-group-item-action:hover:not(.active-monograph) {
+    background-color: #f8f9fa;
+    transform: translateX(5px); /* Subtle slide effect on hover */
 }
 
-    .section:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Section Titles (e.g., Content, Indications) */
-    .section .header {
-        font-weight: 600;
-        color: #4a5568;
-        font-size: 0.9rem;
-        margin-bottom: 6px;
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        text-decoration-color: #cbd5e0;
-    }
-
-    /* Section Body Text */
-    .section .text {
-        color: #2d3748;
-        line-height: 1.6;
-        font-size: 1rem;
-    }

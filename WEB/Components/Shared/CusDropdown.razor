@@ -1,0 +1,52 @@
+﻿<div class="custom-dropdown-container">
+    <button class="cbtn-dropdown @(_isOpen ? "active" : "")" type="button" @onclick="ToggleDropdown">
+        <span class="dropdown-label">Type:</span>
+        <span class="selected-value">@SelectedType</span>
+        <i class="bi bi-chevron-down chevron-icon @(_isOpen ? "rotate" : "")"></i>
+    </button>
+
+    @if (_isOpen)
+    {
+        @* Transparent overlay to catch clicks outside *@
+        <div class="dropdown-overlay" @onclick="ToggleDropdown"></div>
+
+        <ul class="custom-dropdown-menu">
+            @if (Options != null)
+            {
+                @foreach (var item in Options)
+                {
+                    <li>
+                        <button class="custom-dropdown-item @(SelectedType == item ? "selected" : "")"
+                                @onclick="() => SelectOption(item)">
+                            @item
+                            @if (SelectedType == item)
+                            {
+                                <i class="bi bi-check-lg ms-auto"></i>
+                            }
+                        </button>
+                    </li>
+                }
+            }
+        </ul>
+    }
+</div>
+
+
+
+
+
+@code {
+    [Parameter] public string SelectedType { get; set; } = "All";
+    [Parameter] public IEnumerable<string>? Options { get; set; }
+    [Parameter] public EventCallback<string> OnSelected { get; set; }
+
+    private bool _isOpen = false;
+
+    private void ToggleDropdown() => _isOpen = !_isOpen;
+
+    private async Task SelectOption(string option)
+    {
+        _isOpen = false;
+        await OnSelected.InvokeAsync(option);
+    }
+}

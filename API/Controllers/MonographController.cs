@@ -14,14 +14,23 @@ namespace API.Controllers
             string filePath = "data.json";
             string jsonData = await System.IO.File.ReadAllTextAsync(filePath);
 
+
             return Ok(jsonData);
         }
 
-        //// GET: MonographController/Details/5
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
+        // GET: MonographController/Details/5
+        [HttpGet("{guid}")]
+        public async Task<IActionResult> Details(Guid guid)
+        {
+            string filePath = "data.json";
+            string jsonData = await System.IO.File.ReadAllTextAsync(filePath);
+
+            List<MonographModel> list = JsonSerializer.Deserialize<List<MonographModel>>(jsonData);
+
+            MonographModel details = list.Where(x => x.MonographId == guid).FirstOrDefault();
+
+            return Ok(details);
+        }
 
         //// GET: MonographController/Create
         //public ActionResult Create()
