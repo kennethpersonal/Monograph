@@ -8,16 +8,27 @@ namespace WEB.Components.Pages
     {
         private async Task OnClickMonographs(MonographModel item)
         {
+            _selectedMonograph = item;
             _lodingDetails = true;
 
-            MonographModel json_records = await _monograph.InvokeGetAsync<MonographModel>($"api/v1/Monograph/{item.MonographId}");
 
-            if (json_records.MonographId == item.MonographId)
-                _selectedMonograph = item;
+            try
+            {
+                MonographModel json_records = await _monograph.InvokeGetAsync<MonographModel>($"api/v1/Monograph/{item.MonographId}");
 
-            await Task.Delay(1000);
+                if (json_records != null && json_records.MonographId == item.MonographId)
+                    _selectedMonograph = item;
 
-            _lodingDetails = false;
+                await Task.Delay(300);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                _lodingDetails = false;
+            }
         }
 
         private void OnSearch()

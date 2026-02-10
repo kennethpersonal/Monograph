@@ -1,0 +1,38 @@
+﻿<div class="list-group shadow-lg bg-whiteshadow-lg bg-white">
+    @if (Items != null)
+    {
+        @foreach (var item in Items)
+        {
+            <button type="button"
+                    class="list-group-item list-group-item-action border-0 py-3 px-4 transition-all @(SelectedMonograph == item ? "active-monograph" : "")"
+                    @onclick="(() => HandleClick(item))"
+                    style="cursor: pointer;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="fw-bold mb-0 @(SelectedMonograph == item ? "text-white" : "text-dark")">
+                            @item.MonographName
+                        </div>
+                        <div class="small @(SelectedMonograph == item ? "text-white-50" : "text-muted")">
+                            @item.MonographType
+                        </div>
+                    </div>
+                    @if (SelectedMonograph == item)
+                    {
+                        <i class="bi bi-chevron-right text-white"></i>
+                    }
+                </div>
+            </button>
+        }
+    }
+</div>
+
+@code {
+    [Parameter] public IEnumerable<MonographModel>? Items { get; set; }
+    [Parameter] public MonographModel? SelectedMonograph { get; set; }
+    [Parameter] public EventCallback<MonographModel> OnItemSelected { get; set; }
+
+    private async Task HandleClick(MonographModel item)
+    {
+        await OnItemSelected.InvokeAsync(item);
+    }
+}
